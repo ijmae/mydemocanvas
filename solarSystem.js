@@ -31,7 +31,7 @@ const JUPITER = new Planet('Jupiter - Sao Mộc', 3.5, 3, 0.27, SUN, './images/j
 const SATURN = new Planet('Saturn - Sao Thổ', 3.5, 4.2, 0.2, SUN, './images/saturn.png');
 const URANUS = new Planet('Uranus - Sao Thiên Vương', 1.9, 5.5, 0.14, SUN, './images/Uranus.png');
 const NEPTUNE = new Planet('Neptune - Sao Hải Vương', 1.5, 7, 0.11, SUN, './images/Neptune.png');
-const MOON = new Planet('Moon - Mặt Trăng', 0.5, 0.08, 2, EARTH, './images/moon.png');
+const MOON = new Planet('Moon - Mặt Trăng', 0.5, 0.06, 2, EARTH, './images/moon.png');
 
 const PLANETS = [SUN, MERCURY, VERNUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEPTUNE, MOON];
 
