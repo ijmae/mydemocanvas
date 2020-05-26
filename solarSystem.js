@@ -37,6 +37,7 @@ const PLANETS = [SUN, MERCURY, VERNUS, EARTH, MARS, JUPITER, SATURN, URANUS, NEP
 
 export class SolarSystem {
     constructor(width) {
+        this.name = '';
         this.canvas = document.createElement('canvas');
         this.canvas.width = width;
         this.canvas.height = width;
@@ -169,25 +170,26 @@ export class SolarSystem {
             let yMax = y + p.size * p.rateHeight * this.sizeUnit / 2;
 
             if (xMin <= xMouse && xMouse <= xMax && yMin <= yMouse && yMouse <= yMax) {
-                ctx.textBaseline = 'middle';
-                ctx.textAlign = 'center';
-                ctx.font = '20px Arial';
-                ctx.fillStyle = 'White';
-                ctx.fillText(`${p.name}`, (this.canvas.width) / 2, 20);
+                this.name = p.name;
             }
-        })
+        });
+        ctx.textBaseline = 'middle';
+        ctx.textAlign = 'center';
+        ctx.font = '20px Arial';
+        ctx.fillStyle = 'White';
+        ctx.fillText(`${this.name}`, (this.canvas.width) / 2, 20);
     }
 
     drawAll() {
         this.drawSolarSystem();
         //Trick zoom để giữ nguyên độ phân giải => render nhiều hơn, perfomance giảm
-        let temp = new SolarSystem(this.canvas.width * 2);
-        //temp.drawSolarSystem();
         //
-        this.drawZoom(temp.canvas, this.canvasZoom);
-        this.drawZoom(this.canvas, this.canvasZoom2);
-        this.colorPicker();
         this.showNamePlanet();
+        this.drawZoom(this.canvas, this.canvasZoom2);
+        let temp = new SolarSystem(this.canvas.width * 2);
+        temp.drawSolarSystem();
+        this.drawZoom(temp.canvas, this.canvasZoom);
+        this.colorPicker();
     }
 
 }
