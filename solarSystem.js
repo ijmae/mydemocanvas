@@ -182,14 +182,14 @@ export class SolarSystem {
 
     drawAll() {
         this.drawSolarSystem();
+        this.showNamePlanet();
+        this.colorPicker();
+        this.drawZoom(this.canvas, this.canvasZoom2);
         //Trick zoom để giữ nguyên độ phân giải => render nhiều hơn, perfomance giảm
         //
-        this.showNamePlanet();
-        this.drawZoom(this.canvas, this.canvasZoom2);
         let temp = new SolarSystem(this.canvas.width * 2);
         temp.drawSolarSystem();
         this.drawZoom(temp.canvas, this.canvasZoom);
-        this.colorPicker();
     }
 
 }
