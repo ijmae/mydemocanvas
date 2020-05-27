@@ -12,6 +12,8 @@ document.querySelector('#container').appendChild(solarSystem.canvasZoom);
 document.querySelector('#container').appendChild(drawAny.drawTrapezoid(250, 400, 200));
 document.querySelector('#container').appendChild(drawAny.drawDiamond(400, 'red'));
 document.querySelector('#container').appendChild(drawAny.drawZicZac(25));
+document.querySelector('#container').appendChild(drawAny.drawSpiral(1));
+document.querySelector('#container').appendChild(drawAny.drawStar(5, 200));
 
 function runAnimate() {
     clock.drawClock();
